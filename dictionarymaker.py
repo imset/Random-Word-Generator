@@ -3,6 +3,7 @@ import sys
 
 def randomWordGen(arg1 = 5, arg2 = 'default'):
 	totalLength = arg1
+	print(totalLength)
 	excludeInput = "Default"
 	excludeList = []
 	if arg2.lower() == 'exclude':
@@ -303,8 +304,6 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 			print("An error has occured")
 		totalWord.append(lastLetter)
 	else:
-		print("NONEXCLUDE MODE")
-		wait = input("PRESS ENTER TO CONTINUE.")
 		if nextLetter == 'a':
 			lastLetter = random.choice(aend)
 		elif nextLetter == 'b':
@@ -370,4 +369,7 @@ if __name__ == '__main__':
 	try:
 		print(randomWordGen(sys.argv[1], sys.argv[2]))
 	except IndexError:
-		print(randomWordGen(5,'Default'))
+		try:
+			print(randomWordGen(sys.argv[1],'Default'))
+		except IndexError:
+			print(randomWordGen(5,'Default'))
