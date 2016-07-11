@@ -13,8 +13,12 @@ Running it without arguments defaults to a non-excluded 5 letter word.
 ###This code sucks
 Trust me, I know that this is terrible. I realized a lot of the stuff in it is unnecessary. But screw it, I'm too tired right now to make it pretty.
 Or commented. :^)
-
 It Just Werks!
+
+###How it'll get better
+Not that you care, but it'll be improved on, definitely.
+I intend to use a better arguments parser so that I can make the whole thing work entirely from the command line.
+Also, I hope to add the function to control what letter the whole thing starts with if you want, but don't hold your breath.
 
 #####Known Bugs:
 If you exclude too many letters, your entire exclusion will fall apart possibly (likely), and it'll just generate a five letter word. This has been known to happen pretty much no matter what if you exclude all the vowels. Who would've thought, wow.
