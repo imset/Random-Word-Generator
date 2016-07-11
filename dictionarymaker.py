@@ -12,8 +12,6 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 			excludeList.append(excludeInput)
 			if excludeInput == '':
 				excludeList.remove('')
-		print(excludeList)
-		wait = input("PRESS ENTER TO CONTINUE.")
 	totalWord = []
 	allLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','w','x','y','z'] #all letters is used to start off the whole thing. Q has been removed.
 	# the following lists are of letters that can come after the list's name.
@@ -50,7 +48,7 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 	dend = ['a','e','i','o','s','u','y']
 	eend = ['a','b','c','d','e','f','g','h','j','k','l','m','n','o','p','r','s','t','v','w','x','z']
 	fend = ['a','e','f','i','n','o','p','s','t','u','y','z']
-	gend = ['a','e','g','h','i','n','o','s','u','y']
+	gend = ['a','e','h','i','n','o','s','u','y']
 	hend = ['a','e','i','k','o','p','s','u','y']
 	iend = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','v','w','x','z']
 	jend = ['a','e','i','o','u','y']
@@ -72,11 +70,7 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 	zend = ['a','e','i','k','o','p','t','u','y']
 
 	allLetters_exclude = [ex for ex in a if ex not in (excludeList)]
-	print(allLetters_exclude)
-	wait = input("PRESS ENTER TO CONTINUE.")
 	a_exclude = [ex for ex in a if ex not in (excludeList)]
-	print(a_exclude)
-	wait = input("PRESS ENTER TO CONTINUE.")
 	b_exclude = [ex for ex in b if ex not in (excludeList)]
 	c_exclude = [ex for ex in c if ex not in (excludeList)]
 	d_exclude = [ex for ex in d if ex not in (excludeList)]
@@ -133,8 +127,6 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 		nextLetter = random.choice(allLetters)
 	while len(totalWord) < int(totalLength) - 1: #must be - 1 for the end letter function down below.
 		if arg2.lower() == 'exclude':
-			print("EXCLUDE MODE")
-			wait = input("PRESS ENTER TO CONTINUE.")
 			if nextLetter == 'a':
 				nextLetter = random.choice(a_exclude)
 			elif nextLetter == 'b':
@@ -192,11 +184,8 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 			else:
 				print("An error has occured")
 			totalWord.append(nextLetter)
-			print(arg2)
 			
 		else:
-			print("NONEXCLUDE MODE")
-			wait = input("PRESS ENTER TO CONTINUE.")
 			if nextLetter == 'a':
 				nextLetter = random.choice(a)
 			elif nextLetter == 'b':
@@ -254,11 +243,8 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 			else:
 				print("An error has occured")
 			totalWord.append(nextLetter)
-			print(arg2)
 			
 	if arg2.lower() == 'exclude':	
-		print("EXCLUDE MODE")
-		wait = input("PRESS ENTER TO CONTINUE.")
 		if nextLetter == 'a':
 			lastLetter = random.choice(aend_exclude)
 		elif nextLetter == 'b':
@@ -316,7 +302,6 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 		else:
 			print("An error has occured")
 		totalWord.append(lastLetter)
-		print(arg2)
 	else:
 		print("NONEXCLUDE MODE")
 		wait = input("PRESS ENTER TO CONTINUE.")
@@ -377,7 +362,6 @@ def randomWordGen(arg1 = 5, arg2 = 'default'):
 		else:
 			print("An error has occured")
 		totalWord.append(lastLetter)
-		print(arg2)
 	
 	randWord = ''.join(map(str,totalWord))
 	return randWord
